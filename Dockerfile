@@ -1,0 +1,10 @@
+FROM python3.8-slim as build
+WORKDIR /app
+
+ADD requirements .
+RUN pip install -r requirements
+ADD . .
+
+FROM build as combat-api
+EXPOSE 8080
+CMD ["python", "app.py"]
