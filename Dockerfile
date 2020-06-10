@@ -1,4 +1,4 @@
-FROM python3.8-slim as build
+FROM python:3.8-slim as build
 WORKDIR /app
 
 ADD requirements .
