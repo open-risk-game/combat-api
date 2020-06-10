@@ -1,0 +1,15 @@
+POST localhost:8000/v0/basic-combat HTTP/1.1
+Host: localhost:8000
+Content-Type: application/json
+Content-Length: 162
+
+{
+    "attacker": {
+        "name": "London",
+        "tokens": 9
+        },
+    "defender": {
+        "name": "Oxford",
+        "tokens": 2 
+        }
+}
