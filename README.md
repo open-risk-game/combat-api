@@ -13,7 +13,7 @@ Install `flake8` and respect its suggestions please.
 ### Request 
 
 ``` bash 
-curl -X POST localhost:8000/v0/basic-combat -d {"attacker": {"name": "London", "tokens": 9}, "defender": {"name": "Oxford", "tokens": 8}}
+curl -X POST localhost:8000/v0/basic-combat -d '{"attacker": {"name": "London", "tokens": 9}, "defender": {"name": "Oxford", "tokens": 8}}'
 
 ```
 
