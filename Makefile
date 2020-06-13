@@ -7,6 +7,9 @@ run:
 test:
 	pytest
 
+build:
+	docker build -t combat-api .
+
 dev-run:
 	adev runserver .
 
