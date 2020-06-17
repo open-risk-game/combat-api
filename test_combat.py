@@ -1,8 +1,5 @@
 import combat
-
-
-# combat receives http post request from Game service, with territory info
-# (attacker/defender) and token info
+import json
 
 
 class FakeRequest:
@@ -15,18 +12,18 @@ class FakeRequest:
 
 
 async def test_basic_combat():
-    fake_data = {
+    data = {
         "attacker": {
             "name": "London",
             "tokens": 9
-            },
+        },
         "defender": {
             "name": "Oxford",
-            "tokens": 2
-            }
+            "tokens": 8
+        }
     }
-    fake_request = FakeRequest(fake_data)
+    fake_request = FakeRequest(data)
+    response = await combat.basic_combat(fake_request)
+    result = json.loads(response.text)
 
-    result = await combat.basic_combat(fake_request)
-    assert result.status == 200
-    assert result.text == '{"result": -7}'
+    assert result == {"result": -1}
