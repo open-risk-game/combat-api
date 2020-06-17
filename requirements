@@ -1,2 +1,4 @@
 aiohttp==3.6.2
 aiomysql==0.0.20
+pytest==5.4.2
+pytest-aiohttp
