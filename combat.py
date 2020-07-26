@@ -8,13 +8,13 @@ async def basic_combat(request):
     attacker_tokens = int(attacker.get('tokens'))
     defender_tokens = int(defender.get('tokens'))
     result = defender_tokens - attacker_tokens
-    print(result, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
 
     success = True
-    defender_owner = attacker.get('player_id')
     attacker_current_tokens = 0
     attacker_lost_tokens = 0
+    defender_owner = attacker.get('player_id')
     defender_current_owner = attacker.get('player_id')
+    defender_current_tokens = 0
     defender_lost_tokens = 0
     if result > 0:
         success = False
