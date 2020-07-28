@@ -18,13 +18,13 @@ async def test_report():
     attacker = {
             "hex_id": 1,
             "player_id": 93,
-            "tokens": 10,
+            "tokens": 34,
             }
     defender = {
 
             "hex_id": 2,
             "player_id": 54,
-            "tokens": 11,
+            "tokens": 22,
             }
 
     data = {"attacker": attacker, "defender": defender}
@@ -33,19 +33,19 @@ async def test_report():
     actual = json.loads(response.text)
     expected = {
             "combatReport": {
-                "success": False,
+                "success": True,
             },
             "attackingTIle": {
                 "id": 1,
                 "owner": 93,
-                "currentTokens": 0,
+                "currentTokens": 34,
                 "lostTokens": 0,
                 },
             "defendingTile": {
                 "id": 2,
-                "owner": 54,
-                "currentTokens": 1,
-                "lostTokens": 0,
+                "owner": 93,
+                "currentTokens": 34,
+                "lostTokens": 22,
                 }
             }
     assert expected == actual
