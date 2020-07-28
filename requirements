@@ -1,4 +1,6 @@
 aiohttp==3.6.2
 aiomysql==0.0.20
+aiohttp-devtools==0.13.1
+devtools==0.5.1
 pytest==5.4.2
 pytest-aiohttp==0.3.0
