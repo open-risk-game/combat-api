@@ -5,7 +5,7 @@ run:
 	python app.py
 
 test:
-	pytest
+	pytest -vvvvv
 
 build:
 	docker build -t combat-api .
@@ -16,4 +16,5 @@ dev-run:
 install: install-test
 	pip install -r requirments
 
-install-test: pip install -r requirements-test
+install-test: 
+	pip install -r requirements-test
