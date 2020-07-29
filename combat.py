@@ -4,12 +4,11 @@ from aiohttp import web
 async def basic_combat(request):
     data = await request.json()
     attacker = data.get('attacker')
-    defender= data.get('defender')
+    defender = data.get('defender')
     attacker_tokens = int(attacker.get('tokens'))
     defender_tokens = int(defender.get('tokens'))
     result = defender_tokens - attacker_tokens
     success = True
-    defender_owner = attacker.get('player_id')
     defender_current_owner = attacker.get('player_id')
     defender_current_tokens = attacker_tokens
     defender_lost_tokens = defender_tokens
@@ -20,10 +19,8 @@ async def basic_combat(request):
         attacker_lost_tokens = attacker_tokens
         success = False
         defender_current_owner = defender.get('player_id')
-        defender_owner = defender.get('player_id')
         defender_current_tokens = result
         defender_lost_tokens = attacker_tokens
-        
 
     combat_report = report(
             success,
@@ -37,6 +34,7 @@ async def basic_combat(request):
             defender_lost_tokens,
             )
     return web.json_response(combat_report)
+
 
 def report(
         success,
